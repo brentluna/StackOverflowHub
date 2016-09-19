@@ -1,12 +1,17 @@
 import React from 'react';
 
+const handleClick = (link) => {
+  return () => {
+    chrome.tabs.create({active: true, url: link});
+
+  };
+};
+
 const SearchItem = ({title, link, score}) => (
-  <a href={link} >
-    <li>
+    <li onClick={handleClick(link)}>
       <h4>{title}</h4>
       <span>Score: {score}</span>
     </li>
-  </a>
 );
 
 export default SearchItem;
