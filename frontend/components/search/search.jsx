@@ -33,7 +33,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className='search-div'>
-        <input type='text' className='search-input' onChange={this.updateSearch} />
+        <input type='text' className='search-input' onChange={this.updateSearch} placeholder='SEARCH' />
         <ul>
           {this.searchResults()}
         </ul>

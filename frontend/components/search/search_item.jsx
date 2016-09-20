@@ -8,9 +8,9 @@ const handleClick = (link) => {
 };
 
 const SearchItem = ({title, link, score}) => (
-    <li onClick={handleClick(link)}>
-      <h4>{title}</h4>
-      <span>Score: {score}</span>
+    <li onClick={handleClick(link)} className='search-li'>
+      <h4 className='search-title'>{title}</h4>
+      <div className='search-score'>Score: {score}</div>
     </li>
 );
 

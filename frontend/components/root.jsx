@@ -5,7 +5,10 @@ const Root = ({store}) => {
 
   return (
     <Provider store={store}>
-      <SearchContainer />
+      <div className='popout'>
+        <h1 className='title'>StackOverflow Hub</h1>
+        <SearchContainer />
+      </div>
     </Provider>
   );
 };
