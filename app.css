@@ -72,11 +72,12 @@ table {
 }
 
 .search-title {
-
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 .search-score {
-
+  font-size: 12px;
 }
 
 .search-div {

@@ -13,6 +13,7 @@
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/",
-    "http://stackoverflow.com/*"
+    "http://stackoverflow.com/*",
+    "https://stackexchange.com/*"
   ]
 }
