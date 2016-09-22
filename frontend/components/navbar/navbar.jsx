@@ -89,8 +89,13 @@ class Navbar extends React.Component {
       response => {
         console.log(response);
         debugger
+        const regexAuth = /access_token=(.+)&/;
+        const accessCode = response.match(regexAuth)[1];
+        console.log(accessCode);
+        chrome.storage.sync.set({ ggAccessCode: `${accessCode}` }, () => {});
         const responseUrl = new URL(response);
         access_token = responseUrl.searchParams.get('access_token');
+        console.log(access_token);
       }
     );
   }
