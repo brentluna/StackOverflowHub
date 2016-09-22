@@ -1,12 +1,15 @@
 import React from 'react';
-import {ajaxAuth} from '../../util/api_util';
-import $ from 'jquery';
-let access_token;
+import {fetchInbox} from '../../util/api_util';
+import InboxContainer from '../inbox/inbox_container';
+
+let accessCode;
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.inbox = this.inbox.bind(this);
+
   }
 
   // handleClick(e) {
@@ -90,20 +93,30 @@ class Navbar extends React.Component {
         console.log(response);
         debugger
         const regexAuth = /access_token=(.+)&/;
-        const accessCode = response.match(regexAuth)[1];
+        accessCode = response.match(regexAuth)[1];
         console.log(accessCode);
         chrome.storage.sync.set({ ggAccessCode: `${accessCode}` }, () => {});
-        const responseUrl = new URL(response);
-        access_token = responseUrl.searchParams.get('access_token');
-        console.log(access_token);
+        // const responseUrl = new URL(response);
+        // access_token = responseUrl.searchParams.get('access_token');
+        // console.log(access_token);
       }
     );
+  }
+
+  inbox() {
+    let that = this;
+    chrome.storage.sync.get('ggAccessCode', items => {
+      let userCode = items.ggAccessCode;
+      that.props.fetchInbox(userCode);
+    });
   }
 
   render() {
     return(
       <div>
+        <button onClick={this.inbox}>Inbox</button>
         <button onClick={this.handleClick}>Login</button>
+        <InboxContainer />
       </div>
     );
   }
