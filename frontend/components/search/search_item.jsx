@@ -11,7 +11,7 @@ const SearchItem = ({title, link, score}) => (
     <li onClick={handleClick(link)} className='search-li'>
       <h4 className='search-title'>{title}</h4>
       <div className='search-score'>Score: {score}</div>
-      <hr/>  
+      <hr className='search-hr'/>  
     </li>
 );
 

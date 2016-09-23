@@ -141,6 +141,7 @@ a {
     background: white;
     box-sizing: border-box;
     margin: 10px 0;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, .5);
 }
 
 i.material-icons {
@@ -154,19 +155,29 @@ ul {
 }
 
 hr {
+  border: 0px;
+  padding: 0px;
+  height: 0px;
   border-bottom: 1px solid #FF80AB;
   margin: 10px 40px 0px 40px;
   opacity: .6;
+  transition: all .3s ease-in-out;
 }
 
-li:last-of-type hr {
-  display: none;
-}
 
-a:last-of-type hr {
-  display: none;
-}
 
-li:hover {
-  border-left: 1px solid pink;
+
+li:hover hr.search-hr {
+
+border-bottom: 5px solid #FF80AB;
+  margin: 10px 0px 0px 00px;
+  opacity: .9;
+
+}
+a:hover hr.search-hr {
+
+border-bottom: 5px solid #FF80AB;
+  margin: 10px 0px 0px 00px;
+  opacity: .9;
+
 }
