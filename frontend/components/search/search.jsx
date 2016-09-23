@@ -6,12 +6,12 @@ class Search extends React.Component {
     super(props);
     this.state = {search: ''};
     this.updateSearch = this.updateSearch.bind(this);
+    this.arrow = this.arrow.bind(this);
     this.searchResults = this.searchResults.bind(this);
   }
 
 
   updateSearch(e) {
-    console.log(e.target.value);
     this.setState({search: e.target.value}, () => {
       if (this.state.search.length > 3) {
         this.props.fetchSearch(this.state.search);
@@ -29,6 +29,15 @@ class Search extends React.Component {
     return lis;
   }
 
+  arrow() {
+    window.onscroll = () => {
+    if ((window.innerHeight = window.scrollY) >= document.body.offsetHeight) {
+          alert('bottom')
+    }
+
+    }
+      }
+
 
   render() {
     return (
@@ -36,6 +45,7 @@ class Search extends React.Component {
         <input type='text' className='search-input' onChange={this.updateSearch} placeholder='SEARCH' />
         <ul>
           {this.searchResults()}
+          {this.arrow()}
         </ul>
       </div>
     );

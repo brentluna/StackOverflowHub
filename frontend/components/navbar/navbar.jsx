@@ -27,11 +27,8 @@ class Navbar extends React.Component {
         interactive: true
       },
       response => {
-        console.log(response);
-        debugger
         const regexAuth = /access_token=(.+)&/;
         accessCode = response.match(regexAuth)[1];
-        console.log(accessCode);
         chrome.storage.sync.set({ ggAccessCode: `${accessCode}` }, () => {
           this.inbox(); 
         });

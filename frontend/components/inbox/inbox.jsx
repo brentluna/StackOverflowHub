@@ -20,6 +20,7 @@ class Inbox extends React.Component {
             <li className={read} >
               {el.title}
             </li>
+          <hr/>
           </a>
         );
       });
