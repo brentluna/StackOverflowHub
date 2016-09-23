@@ -32,6 +32,7 @@ body {
 	line-height: 1;
   font-family: sans-serif;
   width: 300px;
+  background: teal;
 }
 ol, ul {
 	list-style: none;
@@ -55,20 +56,23 @@ table {
 
 .title {
   text-align: center;
-  margin: 10px;
+  font-family: 'Baloo Bhaina';
+  font-size: 22px;
 }
 .search-input {
   width: 200px;
   letter-spacing: 2px;
   padding: 5px;
-  margin: 0 auto;
+  margin: 5px auto;
 
 }
 
 .search-li {
   padding: 10px;
+  width: 280px;
   cursor: pointer;
   border-bottom: 1px solid black;
+
 }
 
 .search-title {
@@ -85,4 +89,37 @@ table {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+}
+
+.inbox-li {
+  border-bottom: 1px solid black;
+  padding: 5px;
+
+}
+
+.unread {
+  font-weight: bold;
+}
+
+.header-div {
+  display: flex;
+  justify-content: space-between;
+}
+.read {
+  font-weight: lighter;
+}
+
+.inbox-ul {
+  width: 260px;
+  border: 1px solid black;
+}
+
+i.material-icons {
+  font-size: 28px;
+  margin: 5px;
+}
+
+ul {
+  width: 300px;
 }

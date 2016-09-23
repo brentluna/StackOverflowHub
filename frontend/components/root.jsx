@@ -9,7 +9,6 @@ const Root = ({store}) => {
     <Provider store={store}>
       <div className='popout'>
         <NavbarContainer/>
-        <h1 className='title'>StackOverflow Hub</h1>
         <SearchContainer />
       </div>
     </Provider>

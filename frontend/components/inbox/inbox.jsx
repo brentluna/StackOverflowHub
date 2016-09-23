@@ -11,8 +11,16 @@ class Inbox extends React.Component {
     if (Object.keys(this.props.inbox).length) {
       let lis = [];
       this.props.inbox.items.forEach(el => {
+        let read = 'inbox-li read';
+        if (el.is_unread) {
+          read = 'inbox-li unread';
+        }
         lis.push(
-          <li>{el.title}</li>
+          <a href={el.link} target='_blank'>
+            <li className={read} >
+              {el.title}
+            </li>
+          </a>
         );
       });
       return lis;
@@ -21,7 +29,7 @@ class Inbox extends React.Component {
   render() {
 
     return(
-      <ul>
+      <ul className='inbox-ul'>
       {this.messageLi()}
       </ul>
     );
