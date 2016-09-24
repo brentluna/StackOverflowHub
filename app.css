@@ -165,7 +165,10 @@ hr {
 }
 
 
-
+.search-footer {
+  display: flex;
+  justify-content: space-between;
+}
 
 li:hover hr.search-hr {
 

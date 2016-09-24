@@ -22,8 +22,12 @@ class Search extends React.Component {
   searchResults() {
     let lis = [];
     this.props.searchItems.forEach((item, idx) => {
+      let dateInt = parseInt(`${item.creation_date}000`)
+    
+      const date = new Date(dateInt)
+
       lis.push(
-        <SearchItem link={item.link} title={item.title} score={item.score} key={idx}/>
+        <SearchItem link={item.link} title={item.title} date={date.toDateString()} score={item.score} key={idx}/>
       );
     });
     return lis;

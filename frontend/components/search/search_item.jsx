@@ -7,10 +7,13 @@ const handleClick = (link) => {
   };
 };
 
-const SearchItem = ({title, link, score}) => (
+const SearchItem = ({title, link, score, date}) => (
     <li onClick={handleClick(link)} className='search-li'>
       <h4 className='search-title'>{title}</h4>
-      <div className='search-score'>Score: {score}</div>
+      <div className='search-footer'>
+        <div className='search-score'>Score: {score}</div>
+        <div className='search-score'>{date}</div>
+      </div>
       <hr className='search-hr'/>  
     </li>
 );
