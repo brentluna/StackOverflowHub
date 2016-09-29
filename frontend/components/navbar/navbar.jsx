@@ -20,7 +20,7 @@ class Navbar extends React.Component {
     url.searchParams.set('client_id', '7915');
     url.searchParams.set('scope', 'read_inbox');
     url.searchParams.set('redirect_uri', chrome.identity.getRedirectURL());
-
+    
     chrome.identity.launchWebAuthFlow(
       {
         url: url.href,
